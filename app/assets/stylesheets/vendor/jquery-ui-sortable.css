@@ -1,0 +1,10 @@
+.ui-sortable-handle,
+.ui-sortable-handle * {
+  cursor: move;
+  cursor: -webkit-grab;
+}
+
+.ui-sortable-handle:active,
+.ui-sortable-handle *:active {
+    cursor: -webkit-grabbing
+}

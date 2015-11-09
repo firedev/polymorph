@@ -58,6 +58,14 @@ It also needs some js helpers:
 //= require polymorph/polymorph
 ```
 
+And optional stylesheet that adds cursor shape:
+
+```css
+/*  application.css
+ * = require polymorph
+ */
+ ```
+
 Default selector is `.admin [data-orderable]` so you have to add `.admin`
 somewhere.
 
