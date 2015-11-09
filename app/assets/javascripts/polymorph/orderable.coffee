@@ -9,7 +9,7 @@ class Orderable
     options = @options(el)
     $(el).sortable options
 
-  options: (el) =>
+  options: (el) ->
     options =
       update: ->
         $.post $(@).data('orderable'), $(@).sortable('serialize')

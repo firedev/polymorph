@@ -5,7 +5,12 @@ module Polymorph
     private
 
     def authorize_polymorph
-      Polymorph.configuration.authorize.call(self) if Polymorph.configuration.authorize
+      if !Polymorph.configuration.authorize
+        flash[:error] = 'Missing Polymorph Authorize'
+        redirect_to :root_path
+      else
+        Polymorph.configuration.authorize.call(self)
+      end
     end
   end
 end

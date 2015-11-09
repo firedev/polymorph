@@ -1,0 +1,5 @@
+<% if @resource.deleted? %>
+  $('[data-admin-bar="<%= dom_id @resource %>"]').addClass('deleted');
+<% else %>
+  $('[data-admin-bar="<%= dom_id @resource %>"]').removeClass('deleted');
+<% end %>

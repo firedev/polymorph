@@ -7,16 +7,12 @@ module Polymorph
 
     private
 
-    def orderable
-      params[:orderable_type]
-    end
-
     def klass
-      orderable.camelize.constantize
+      @klass = params[:orderable_type].constantize
     end
 
     def order
-      params[orderable]
+      params[klass.table_name.singularize]
     end
   end
 end
