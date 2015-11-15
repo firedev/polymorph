@@ -58,22 +58,22 @@ It also needs some js helpers:
 //= require polymorph/polymorph
 ```
 
-And optional stylesheet that adds cursor shape:
+And an optional stylesheet for changing cursor shape:
 
 ```css
 /*  application.css
  * = require polymorph
  */
- ```
+```
 
 Default selector is `.admin [data-orderable]` so you have to add `.admin`
-somewhere.
+class somewhere for an authorized user.
 
 ```slim
 body class=(current_user.admin? && 'admin')
 ```
 
-Orderable items got to have it's `.id` in HTML `id` element
+Orderable items got to have its `#id` in HTML `id` element
 
 ```
 div_for(model)
@@ -123,15 +123,17 @@ div data-orderable=polymorph.orderable_path(Model)
 
 ### Additional Orderable Parameters:
 
+**Axis** limits movement alone X or Y axes:
+
 ```slim
 data-orderable-axis="y"
 ```
-Limits movement along `x` or `y` axis.
+
+**Items** is an additional subselector for items that will be serialized and moved:
 
 ```slim
 data-orderable-items="> .block"
 ```
-Specifies class name for sortable item.
 
 ## 3. Paranoid
 
