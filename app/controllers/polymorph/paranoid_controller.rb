@@ -1,5 +1,5 @@
 module Polymorph
-  class ParanoidController < Admin::ApplicationController
+  class ParanoidController < Polymorph::ApplicationController
     def destroy
       if resource.deleted?
         klass.restore(resource.id)

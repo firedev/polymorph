@@ -1,0 +1,5 @@
+<% if @resource.published? %>
+  $('[data-admin-bar="<%= dom_id @resource %>"]').removeClass('unpublished');
+<% else %>
+  $('[data-admin-bar="<%= dom_id @resource %>"]').addClass('unpublished');
+<% end %>

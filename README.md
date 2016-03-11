@@ -185,3 +185,21 @@ you want to wrap your own stuff.
 
 # end
 ```
+
+## 4. Publishable
+
+This one sets `published_at` in the same vein as with Paranoid.
+
+First a migration:
+
+```
+rails generation migration AddPublishedAtToModel published_at:datetime:index
+rake db:migrate
+```
+
+Add concern:
+```
+include Polymorph::Publishable
+```
+
+This module adds 'published' and 'unpublished' scope.
