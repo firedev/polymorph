@@ -10,5 +10,9 @@ module Polymorph
     def published?
       published_at
     end
+
+    def published=(published)
+      self.published_at = published ? Time.current : nil
+    end
   end
 end
